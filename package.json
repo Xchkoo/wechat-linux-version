@@ -1,0 +1,48 @@
+{
+  "name": "wechat-linux-version",
+  "version": "0.1.0",
+  "description": "a simple electron practice project, mainly help wechat to be much more for humans.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "package:linux": "electron-builder --publish never --linux",
+    "dist": "electron-builder",
+    "start": "electron ."
+  },
+  "author": "Xchkoo",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^14.0.1",
+    "electron-builder": "^22.11.7"
+    
+  },
+  "build": {
+    "appId": "Electron-desktop",
+    "productName": "Electron-desktop",
+    "copyright": "",
+    "directories": {
+        "output": "build"
+    },
+    "win": {
+        "target": [
+            "nsis"
+        ],
+        "icon": "build/wechat.ico"
+    },
+    "linux": {
+        "target": [
+            "AppImage"
+        ]
+    },
+    "extends": null,
+    "asar": true,
+    "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "installerHeaderIcon": "build/wechat.ico",
+        "installerIcon": "build/wechat.ico",
+        "createDesktopShortcut": true
+    }
+}
+}
